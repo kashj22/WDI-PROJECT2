@@ -1,3 +1,3 @@
 class Location < ActiveRecord::Base
-  has_many :cafes
+  has_many :venues
 end

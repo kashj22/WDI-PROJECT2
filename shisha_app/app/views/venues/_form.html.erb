@@ -1,10 +1,10 @@
-<%= form_for(@cafe) do |f| %>
-  <% if @cafe.errors.any? %>
+<%= form_for(@venue) do |f| %>
+  <% if @venue.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@cafe.errors.count, "error") %> prohibited this cafe from being saved:</h2>
+      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
 
       <ul>
-      <% @cafe.errors.full_messages.each do |message| %>
+      <% @venue.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :caves
+  resources :venues
   resources :images
   resources :locations
   devise_for :users
