@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Venues</h1>
+<h1>Cafes</h1>
+
 
 <table>
   <thead>
@@ -17,7 +18,7 @@
       <tr>
         <td><%= venue.name %></td>
         <td><%= venue.description %></td>
-        <td><%= venue.location %></td>
+        <td><%= venue.location.name %></td>
         <td><%= link_to 'Show', venue %></td>
         <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
         <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
