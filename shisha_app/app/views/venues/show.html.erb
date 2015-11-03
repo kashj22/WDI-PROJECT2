@@ -17,7 +17,7 @@
 
 <p>
   <b>Image:</b>
-  <%= image_tag @pics_image.url %>
+  <%= link_to image_tag(@pics_image.thumb.url), @pics_image.url %>
 </p>
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
