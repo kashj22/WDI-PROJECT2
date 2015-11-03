@@ -17,7 +17,7 @@
 
 <p>
   <b>Image:</b>
-  <%= link_to image_tag(@pics_image.thumb.url), @pics_image.url %>
+  <%= link_to image_tag(@pics_image_url), @pics_image_url %>
 </p>
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
@@ -29,6 +29,16 @@
     <h3><%= review.headline %></h3>
     <p><%= review.content %></p>
   <% end %> 
+</p>
+
+<p>
+  <strong>Photos:</strong>
+  <% @venue.images.each do |image| %>
+    <%= image_tag image.pics.thumb.url %>
+  <% end %>
+</p>
+
+<%= link_to "Add a photo", new_image_path %>
 
 
 

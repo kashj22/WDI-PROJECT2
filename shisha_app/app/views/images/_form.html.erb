@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    
+  
     <%= f.label :pics %><br>
     <%= f.file_field :pics %>
   </div>
@@ -22,7 +22,7 @@
   </div>
   <div class="field">
     <%= f.label :venue_id %><br>
-    <%= f.collection_select(:cafe_id, Venue.all, :id, :name) %>
+    <%= f.collection_select(:venue_id, Venue.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>
