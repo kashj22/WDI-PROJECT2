@@ -15,6 +15,11 @@
   <%= @venue.location.name %>
 </p>
 
+<p>
+  <b>Image:</b>
+  <%= image_tag @pics_image.url %>
+</p>
+
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>
 
