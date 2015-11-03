@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ShishaApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <p><%= link_to "Home", root_path   %> |
-  <%= link_to 'Cafes', venues_path %> |
-  <%= link_to 'Add a Cafe', new_venue_path %> |
-  <%= link_to 'Add an Image', new_image_path %> |
-  <%= link_to 'Images', images_path %> |
-  <%= link_to 'Reviews', reviews_path %> |
-  <%= link_to 'Add a Review', new_review_path %> |
-  </p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application"%>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <p><%= link_to "Home", root_path   %> |
+    <%= link_to 'Cafes', venues_path %> |
+    <%= link_to 'Add a Cafe', new_venue_path %> |
+    <%= link_to 'Add an Image', new_image_path %> |
+    <%= link_to 'Images', images_path %> |
+    <%= link_to 'Reviews', reviews_path %> |
+    <%= link_to 'Add a Review', new_review_path %> |
+    </p>
 
 
-  <% if current_user %>
-       <%= current_user.email %>
-       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-       <%= link_to "Sign In", new_user_session_path %>
-       <%= link_to "Register", new_user_registration_path %>
-    <% end %>
+    <% if current_user %>
+         <%= current_user.email %>
+         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <% else %>
+         <%= link_to "Sign In", new_user_session_path %>
+         <%= link_to "Register", new_user_registration_path %>
+      <% end %>
 
-    
 
-  <%= yield %>
 
-</body>
+
+    <%= yield %>
+
+  </body>
 </html>
