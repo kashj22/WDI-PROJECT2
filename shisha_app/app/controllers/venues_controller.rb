@@ -1,6 +1,24 @@
 class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
+  def upvote 
+    @venue = Venue.find(params[:id])
+    @venue.upvote_by current_user
+    redirect_to :back
+  end  
+
+  def downvote
+    @venue = Venue.find(params[:id])
+    @venue.downvote_by current_user
+    redirect_to :back
+  end
+
+  def unvote
+    @venue = Venue.find(params[:id])
+    @venue.unvote_by current_user
+    redirect_to :back
+  end
+
   # GET /venues
   # GET /venues.json
   def index

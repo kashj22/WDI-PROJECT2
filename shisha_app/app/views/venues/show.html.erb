@@ -28,6 +28,26 @@
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>
 
+
+<p>
+  <%= link_to "upvote", like_venue_path(@venue[:id]), method: :put %>
+</p>
+
+<p>
+  <%= @venue.get_likes.size %>
+</p>
+
+<p>
+  <%= link_to "downvote", dislike_venue_path(@venue[:id]), method: :put %>
+</p>
+<p>
+  <%= @venue.get_dislikes.size %>
+</p>
+<p>
+  <%= link_to "Cancel Vote", unvote_venue_path(@venue[:id]), method: :put %>
+</p>
+
+
 <p>
   <strong>Reviews:</strong>
   <% @venue.reviews.each do |review| %>
