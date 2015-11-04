@@ -13,7 +13,7 @@ gem 'acts_as_votable'
 
 gem 'ransack'
 
-gem 'cancan'
+gem 'cancancan', '~> 1.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
