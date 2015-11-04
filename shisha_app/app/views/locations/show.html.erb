@@ -5,8 +5,10 @@
   <%= @location.name %>
 </p>
 <ul>
-<% @location.venues.each do |venue|  %>
+
+<% @location.venues.order(:cached_votes_score => :desc).each do |venue|  %>
   <li><%= link_to venue.name, venue %></li>
+  <li><%= venue.cached_votes_up - venue.cached_votes_down %></li>
 <% end %>
 </ul>
 <%= link_to 'Edit', edit_location_path(@location) %> |

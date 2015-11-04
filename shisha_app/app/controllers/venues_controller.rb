@@ -3,6 +3,7 @@ class VenuesController < ApplicationController
   before_action :authenticate_user!
 
   load_and_authorize_resource
+  skip_authorize_resource :only => [:upvote, :downvote, :unvote]
 
   def index
     @q = Venue.ransack(params[:q])

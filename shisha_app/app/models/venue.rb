@@ -6,3 +6,8 @@ class Venue < ActiveRecord::Base
   mount_uploader :logo, VenueLogoUploader
   acts_as_votable
 end
+
+
+
+
+
