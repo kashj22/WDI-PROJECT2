@@ -18,6 +18,7 @@
 <p>
   <strong>Location:</strong>
   <%= @venue.location.name %>
+
 </p>
 
 <p>
@@ -30,12 +31,12 @@
 
 <ul>
   <li>
-    <%= link_to "upvote", like_venue_path(@venue[:id]), method: :put %>
+  <%= link_to "like", like_venue_path(@venue[:id]), method: :put %>
     <%= @venue.get_likes.size %>
   </li>
 
   <li>
-    <%= link_to "downvote", dislike_venue_path(@venue[:id]), method: :put %>
+    <%= link_to "dislike", dislike_venue_path(@venue[:id]), method: :put %>
     <%= @venue.get_dislikes.size %>
   </li>
 

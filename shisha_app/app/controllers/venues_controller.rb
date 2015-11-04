@@ -1,5 +1,11 @@
 class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
+  def index
+    @q = Venue.ransack(params[:q])
+    @venues = @q.result(distinct: true)
+  end
 
   def upvote 
     @venue = Venue.find(params[:id])
@@ -19,11 +25,6 @@ class VenuesController < ApplicationController
     redirect_to :back
   end
 
-  # GET /venues
-  # GET /venues.json
-  def index
-    @venues = Venue.all
-  end
 
   # GET /venues/1
   # GET /venues/1.json

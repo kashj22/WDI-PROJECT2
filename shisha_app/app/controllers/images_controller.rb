@@ -1,8 +1,11 @@
 class ImagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /images
   # GET /images.json
+
   def index
     @images = Image.all
   end

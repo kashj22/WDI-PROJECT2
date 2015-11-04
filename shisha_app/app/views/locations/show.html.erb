@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @location.name %>
 </p>
-
+<ul>
+<% @location.venues.each do |venue|  %>
+  <li><%= link_to venue.name, venue %></li>
+<% end %>
+</ul>
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
