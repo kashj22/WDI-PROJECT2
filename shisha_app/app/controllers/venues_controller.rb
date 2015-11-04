@@ -2,6 +2,8 @@ class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+  load_and_authorize_resource
+
   def index
     @q = Venue.ransack(params[:q])
     @venues = @q.result(distinct: true)
