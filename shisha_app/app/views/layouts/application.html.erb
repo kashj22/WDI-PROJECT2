@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application"%>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application"%>
+  <%= csrf_meta_tags %>
+</head>
+<body class="row">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">ShishaMi</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-  <body>
-    <p><%= link_to "Home", root_path   %> |
-    <%= link_to 'Cafes', venues_path %> |
-    <%= link_to 'Add a Cafe |', new_venue_path if current_user.try(:admin?) %> 
-    <%= link_to 'Add an Image', new_image_path %> |
-    <%= link_to 'Images', images_path %> |
-    <%= link_to 'Reviews', reviews_path %> |
-    <%= link_to 'Add a Review', new_review_path %> |
-    </p>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><%= link_to 'Cafes', venues_path %></li>
+        <li><%= link_to 'Add a Cafe', new_venue_path if current_user.try(:admin?) %></li>
+        <li><%= link_to 'Images', images_path %></li>
+        <li><%= link_to 'Add an Image', new_image_path %></li>
+        <li><%= link_to 'Reviews', reviews_path %></li>
+        <li><%= link_to 'Add a Review', new_review_path %></li>
 
-
-    <% if current_user %>
-         <%= current_user.email %>
-         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      <% else %>
-         <%= link_to "Sign In", new_user_session_path %>
-         <%= link_to "Register", new_user_registration_path %>
-      <% end %>
-
-
-
-    <main class="row">
-      <%= yield %>
-    </main>
-  </body>
+        <li class="has-dropdown">
+          <a href="#">Account</a>
+          <ul class="dropdown">
+            <% if current_user %>
+            <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Register", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+  <main class="row">
+    <%= yield %>
+  </main>
+</body>
 </html>

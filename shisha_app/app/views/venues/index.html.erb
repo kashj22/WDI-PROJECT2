@@ -3,13 +3,9 @@
 <h1>Cafes</h1>
 
 <%= search_form_for @q do |f| %>
-
-  # Search if the name field contains...
-  <%= f.label :name_cont %>
   <%= f.search_field :name_cont, placeholder: "enter shisha cafe" %>
-
-  <%= f.submit %>
 <% end %>
+<%= link_to 'New Venue', new_venue_path %>
 
 
 <table>
@@ -37,10 +33,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Venue', new_venue_path %>
 
 
 
