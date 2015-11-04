@@ -1,2 +1,12 @@
 <h1>Welcome to ShishaMi</h1>
 
+<div class = "sign_in">
+<% if current_user %>
+     <%= current_user.email %>
+     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  <% else %>
+     <%= link_to "Sign In", new_user_session_path %>
+     <%= link_to "Register", new_user_registration_path %>
+  <% end %>
+
+  </div>
