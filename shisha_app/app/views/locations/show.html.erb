@@ -8,7 +8,7 @@
   <li><%= image_tag venue.logo.thumb.url %></li>
   <li><%= link_to venue.name, venue %></li>
   <li><%= link_to venue.location.name, venue.location %></li>
-  <li><%= venue.cached_votes_up - venue.cached_votes_down %></li>
+  <li><p>score:</p><%= venue.cached_votes_up - venue.cached_votes_down %></li>
 </ul>
 <% end %>
 
