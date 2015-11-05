@@ -19,3 +19,53 @@
  body {
   text-align: center;
  }
+
+ ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+ }
+
+ .tile {
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid #E2E2E2;
+  border-radius: 3px;
+ }
+
+ .top-bar {
+  background-color: purple;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .cafe-search {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+.email_input {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.password_input {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
