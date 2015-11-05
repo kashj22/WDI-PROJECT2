@@ -10,8 +10,12 @@
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-    <button><%= link_to "Sign In", new_user_session_path %></button>
-    <button><%= link_to "Register", new_user_registration_path %></button>
+    <% if user_signed_in? %>
+      <%= link_to "Go to cafes", venues_path, class: "button round" %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path, class: "button round" %>
+      <%= link_to "Register", new_user_registration_path, class: "button round" %>
+    <% end %>
   </div>
   <div class="large-2 columns">
     <h3> </h3>
