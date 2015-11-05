@@ -1,16 +1,16 @@
 <%= form_for(@venue) do |f| %>
-  <% if @venue.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+<% if @venue.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
 
-      <ul>
-      <% @venue.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <ul>
+    <% @venue.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="new_venue_input">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -29,7 +29,8 @@
     <%= f.label :location_id %><br>
     <%= f.collection_select(:location_id, Location.all, :id, :name) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>
