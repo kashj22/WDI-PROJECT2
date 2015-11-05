@@ -50,7 +50,8 @@
   <% @venue.reviews.each do |review| %>
     <h3><%= review.headline %></h3>
     <p><%= review.content %></p>
-  <% end %> 
+  <% end %>
+  <%= link_to 'Add a Review', new_review_path %>
 </p>
 
 <p>

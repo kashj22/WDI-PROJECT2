@@ -1,18 +1,19 @@
 <%= form_for(@image, :html => {:multipart => true}) do |f| %>
-  <% if @image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+<% if @image.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
-      <ul>
-      <% @image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @image.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
+
+<div class="new_image_input">
   <div class="field">
-  
     <%= f.label :pics %><br>
     <%= f.file_field :pics %>
   </div>
@@ -24,7 +25,9 @@
     <%= f.label :venue_id %><br>
     <%= f.collection_select(:venue_id, Venue.all, :id, :name) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>
