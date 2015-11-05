@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @location.name %>
-</p>
-<ul>
+
+<h2>Top shisha bars in <%= @location.name %></h2>
 
 <% @location.venues.order(:cached_votes_score => :desc).each do |venue|  %>
+<ul class="rating-tile">
+  <li><%= image_tag venue.logo.thumb.url %></li>
   <li><%= link_to venue.name, venue %></li>
+  <li><%= link_to venue.location.name, venue.location %></li>
   <li><%= venue.cached_votes_up - venue.cached_votes_down %></li>
-<% end %>
 </ul>
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<% end %>
+

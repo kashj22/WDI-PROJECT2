@@ -51,21 +51,30 @@
 </div>
 
 <p>
-  <strong>Photos:</strong>
-  <% @venue.images.each do |image| %>
-  <%= image_tag image.pics.thumb.url %>
-  <% end %>
+  <ul class="row">
+    <% @venue.images.each do |image| %>
+    <li class="venue large-4 medium-4 small-6 columns">
+      <ul class="tile">
+        <li><%= image_tag image.pics.thumb.url %></li>
+      </ul>
+    </li>
+    <% end %>
+  </ul>
 </p>
 
-<%= link_to "Add a photo", new_image_path %>
+<%= link_to "Add a photo", new_image_path, class: "button secondary" %>
+
+
 
 <p>
   <strong>Reviews:</strong>
   <% @venue.reviews.each do |review| %>
-  <h3><%= review.headline %></h3>
-  <p><%= review.content %></p>
+  <div class="panel">
+    <h3><%= review.headline %></h3>
+    <p><%= review.content %></p>
+  </div>
   <% end %>
-  <%= link_to 'Add a Review', new_review_path %>
+  <%= link_to 'Add a Review', new_review_path, class: "button secondary" %>
 </p>
 
 
