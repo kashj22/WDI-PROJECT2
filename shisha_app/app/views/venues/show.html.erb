@@ -1,67 +1,74 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @venue.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @venue.description %>
-</p>
 
-<p>
-  <strong>Logo:</strong>
-  <%= image_tag @venue.logo.thumb.url %>
-</p>
+<div class="background_image" >
+  <div class="cafe_info">
+    <p>
+     <%= image_tag @venue.logo.thumb.url, class: "logo_image" %>
+   </p>
 
-<p>
+
+   <p> 
+    <strong><%= @venue.name %></strong>
+  </p>
+
+  <p>
+   <%= @venue.description %>
+ </p>
+
+ <p>
   <strong>Location:</strong>
-  <%= @venue.location.name %>
-
+  <%= link_to @venue.location.name, @venue.location %>
 </p>
+</div>
+</div>
+
 
 <p>
-  <b>Image:</b>
+
   <%= link_to image_tag(@pics_image_url), @pics_image_url %>
-</p>
+</p> 
+<div class="small_links">
+  <%= link_to 'Edit', edit_venue_path(@venue) %> |
+  <%= link_to 'Back', venues_path %>
 
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+  <ul>
+    <li>
+      <%= link_to "like", like_venue_path(@venue[:id]), method: :put %>
+      <%= @venue.get_likes.size %>
+    </li>
 
-<ul>
-  <li>
-  <%= link_to "like", like_venue_path(@venue[:id]), method: :put %>
-    <%= @venue.get_likes.size %>
-  </li>
+    <li>
+      <%= link_to "dislike", dislike_venue_path(@venue[:id]), method: :put %>
+      <%= @venue.get_dislikes.size %>
+    </li>
 
-  <li>
-    <%= link_to "dislike", dislike_venue_path(@venue[:id]), method: :put %>
-    <%= @venue.get_dislikes.size %>
-  </li>
-
-  <li>
-    <%= link_to "Cancel Vote", unvote_venue_path(@venue[:id]), method: :put %>
-  </li>
-</ul>
-
-<p>
-  <strong>Reviews:</strong>
-  <% @venue.reviews.each do |review| %>
-    <h3><%= review.headline %></h3>
-    <p><%= review.content %></p>
-  <% end %>
-  <%= link_to 'Add a Review', new_review_path %>
-</p>
+    <li>
+      <%= link_to "Cancel Vote", unvote_venue_path(@venue[:id]), method: :put %>
+    </li>
+  </ul>
+</div>
 
 <p>
   <strong>Photos:</strong>
   <% @venue.images.each do |image| %>
-    <%= image_tag image.pics.thumb.url %>
+  <%= image_tag image.pics.thumb.url %>
   <% end %>
 </p>
 
 <%= link_to "Add a photo", new_image_path %>
+
+<p>
+  <strong>Reviews:</strong>
+  <% @venue.reviews.each do |review| %>
+  <h3><%= review.headline %></h3>
+  <p><%= review.content %></p>
+  <% end %>
+  <%= link_to 'Add a Review', new_review_path %>
+</p>
+
+
 
 
 
