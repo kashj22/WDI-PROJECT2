@@ -14,7 +14,7 @@
   <ul class="row">
     <% @venues.each do |venue| %>
     <li class="venue large-3 medium-4 small-6 columns">
-      <%= link_to venue.name do %>
+      <%= link_to venue do %>
         <ul class="tile">
           <li><%= image_tag venue.logo.thumb.url %></li>
           <li><%= venue.name %></li>

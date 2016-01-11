@@ -32,6 +32,7 @@ class VenuesController < ApplicationController
   # GET /venues/1
   # GET /venues/1.json
   def show
+    @venue = Venue.find(params[:id])
   end
 
   # GET /venues/new
