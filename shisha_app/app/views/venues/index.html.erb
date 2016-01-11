@@ -14,11 +14,13 @@
   <ul class="row">
     <% @venues.each do |venue| %>
     <li class="venue large-3 medium-4 small-6 columns">
-      <ul class="tile">
-        <li><%= image_tag venue.logo.thumb.url %></li>
-        <li><%= link_to venue.name, venue %></li>
-        <li><%= link_to venue.location.name, venue.location %></li>
-      </ul>
+      <%= link_to venue.name do %>
+        <ul class="tile">
+          <li><%= image_tag venue.logo.thumb.url %></li>
+          <li><%= venue.name %></li>
+          <li><%= link_to venue.location.name, venue.location %></li>
+        </ul>
+      <% end %>
     </li>
     <% end %>
   </ul>
