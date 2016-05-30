@@ -6,6 +6,8 @@ ShishaMi is an app for shisha lovers in London, and possibly nationwide. While t
 Users are also able to upload pictures from their visits to cafes. This allows each cafe to display pictures and reviews on their homepage, giving users an unbiased view into the cafe. </br>
 Finally, the voting system allows a ranking table to be formed per location to see which are the most popular cafes in a certain location according to its most frequent visitors.
 
+![image](https://github.com/kashj22/WDI-PROJECT2/tree/master/images/shishami.png)
+
 <h2>Installation & Technologies Used</h2>
  Ruby on Rails v. 4.2.4. </br>
 The gems installed included 'devise' for user authentication, 'carrierwave' for image uploader capabilities, 'ransack' for searching options, 'foundation' for styling, 'acts-as-votable' for the voting structure and 'cancancan' to enable myself as the ultimate admin for the site.
@@ -30,7 +32,7 @@ The layout for the images and cafe display pages were created using foundation g
 Despite the site working just fine, I would have liked to style it better to give it the look that really catches your eye and imagination. With shisha being very relaxing and soothing as well as quite lively and a good night out with friends, the possiblilites are endless when it comes to styling it in a way that captivates that audience. </br>
 Also, the ranking system was quite basic. I wanted it to take full advantage of the page, and display info about the shisha cafe across the page in terms of why it is so popular/ranked high or unpopular/ranked low. 
 
-<h3>Link:</h3>
+
 
 
  
